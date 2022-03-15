@@ -61,7 +61,7 @@ Since we aim at solving device's locations, we must process locations. We will d
 
 ```python
 class SimpleLocation:
-	def __init__(self, x: float, y: float, y: float) -> None:
+	def __init__(self, x: float, y: float, z: float) -> None:
 		self.x = x
 		self.y = y
 		self.z = z
