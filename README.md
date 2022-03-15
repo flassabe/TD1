@@ -34,11 +34,11 @@ this must be addressed by our data structure.
 
 ## RSSI sample
 
-The base data structure we will be using is the RSSI sample. It is a RSSI value associated to a reference MAC address (the reference is a known device, such as an access point or a wireless LAN probe). In Python, this will be the following data structure:
+The base data structure we will be using is the RSSI sample. It is a list of RSSI value associated to a reference MAC address (the reference is a known device, such as an access point or a wireless LAN probe). In Python, this will be the following data structure:
 
 ```python
 class RSSISample:
-	def __init__(self, mac_address: str, rssi: float) -> None:
+	def __init__(self, mac_address: str, rssi: list[float]) -> None:
 		self.mac_address = mac_address
 		self.rssi = rssi
 ```
@@ -95,7 +95,7 @@ class FingerprintDatabase:
 First, we want to be able to collate several RSSI values on a given sampling phase into a single value. We will use the averaging to get a single value. Since dBm are not a linear unit, we must convert dBm to mW, average the converted values, then convert the result back to dBm. Add and implement the following function to the FingerprintSample class:
 
 ```python
-class FingerprintSample:
+class RSSISample:
 	"""
 	Other class members
 	"""
